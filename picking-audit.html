@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ピッキング・監査 | 調剤薬局スタッフ用</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">💊 Staff Manual</h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">会計処理</a></li>
+                    <li><a href="picking-audit.html" class="active">ピッキング・監査</a></li>
+                    <li><a href="tosho-audit.html">散薬・シロップ監査</a></li>
+                    <li><a href="yuyama-pack.html">湯山分包機</a></li>
+                    <li><a href="medixs.html">薬歴 (Medixs)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content container">
+        <div class="hero">
+            <span class="badge" style="background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.39);">調剤業務</span>
+            <h2 class="page-title">ピッキング・監査の手順</h2>
+            <p class="page-description">Picking Goを用いた正確なピッキングと、medimonitor（メディモニター）を活用した監査業務の流れを解説します。</p>
+        </div>
+
+        <div class="steps-container">
+            <!-- Step 1: Picking Go -->
+            <article class="step-card">
+                <div class="step-number" style="color: #d1fae5; -webkit-text-stroke: 2px #10b981;">01</div>
+                <div class="step-content">
+                    <h3 class="step-title">Picking Goでのピッキング</h3>
+                    <p class="step-text">
+                        処方箋のバーコードを読み取り、指示された医薬品を棚から集めます。集める際、医薬品の<strong>GS1コード（バーコード）</strong>を端末で読み取り、照合を行います。
+                    </p>
+
+                    <div class="pdf-section" style="margin: 24px 0;">
+                        <h4 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
+                            <span style="color: #10b981;">📄</span> Picking Go 簡易マニュアル
+                        </h4>
+                        <div class="pdf-container" style="position: relative; width: 100%; height: 600px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); overflow: hidden;">
+                            <iframe src="docs/picking_go_manual.pdf" width="100%" height="100%" style="border: none;" title="Picking Go マニュアル">
+                                お使いのブラウザはPDFのプレビューに対応していません。<a href="docs/picking_go_manual.pdf" target="_blank">こちらからダウンロード</a>して確認してください。
+                            </iframe>
+                        </div>
+                        <p style="margin-top: 8px; color: var(--text-muted); font-size: 0.9rem; text-align: right;">
+                            <a href="docs/picking_go_manual.pdf" target="_blank" style="color: var(--primary-color); text-decoration: underline; font-weight: 600;">別タブで大きく開く</a>
+                        </p>
+                    </div>
+                    <div class="flow-container">
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/picking-go-1.jpg" id="img-picking-1" alt="患者の選択">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge">1</span>ピッキングする患者を選択</h4>
+                                <p>タブレット端末（Picking Go）の画面に表示されているリストから、これから<strong>ピッキングを行う患者様を選択</strong>します。</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/picking-go-2.jpg" id="img-picking-2" alt="棚番の確認とピッキング">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge">2</span>棚番を確認してピッキング</h4>
+                                <p>画面の指示にしたがい、対象となる<strong>医薬品の棚番（保管場所）を確認</strong>して、必要な数量をピッキング（取り出し）します。</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/picking-go-3.jpg" id="img-picking-3" alt="スキャンしてチェック">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge">3</span>スキャンしてチェックする</h4>
+                                <p>取り出した医薬品のGS1コード（バーコード）を端末のカメラやリーダーで<strong>スキャンし、正しい薬品かチェック（照合）</strong>します。すべて完了したらカゴへ入れます。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Step 2: Medimonitor -->
+            <article class="step-card">
+                <div class="step-number" style="color: #d1fae5; -webkit-text-stroke: 2px #10b981;">02</div>
+                <div class="step-content">
+                    <h3 class="step-title">medimonitorを用いた重量監査</h3>
+                    <p class="step-text">
+                        ピッキングが終わった医薬品を監査台の秤（はかり）に載せ、メディモニターを使用して最終監査を行います。<br>
+                        あらかじめ登録された医薬品の<strong>重量データ</strong>をもとに、ピッキングした薬剤の種類と数量が処方箋と完全に一致しているかをシステムが自動でチェックします。
+                    </p>
+                    <div class="flow-container">
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/medimonitor-1.jpg" id="img-audit-1" alt="監査台に置く">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge">1</span>監査台（秤）に置く</h4>
+                                <p>ピッキングが完了したカゴや医薬品を、medimonitorの秤（はかり）の上に載せます。</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/medimonitor-2.jpg" id="img-audit-2" alt="重量の一致を確認">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge">2</span>重量の一致を確認</h4>
+                                <p>あらかじめ登録された重量データと一致しているか、画面上の表示（OK/一致など）を確認します。</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/medimonitor-3.jpg" id="img-audit-3" alt="監査完了処理">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge">3</span>監査完了処理</h4>
+                                <p>全てが一致したら完了操作を行い、お薬を投薬袋へセットする準備へ進みます。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 薬局スタッフマニュアル</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

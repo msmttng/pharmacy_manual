@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会計処理マニュアル | 調剤薬局スタッフ用</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">💊 Staff Manual</h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html" class="active">会計処理</a></li>
+                    <li><a href="picking-audit.html">ピッキング・監査</a></li>
+                    <li><a href="tosho-audit.html">散薬・シロップ監査</a></li>
+                    <li><a href="yuyama-pack.html">湯山分包機</a></li>
+                    <li><a href="medixs.html">薬歴 (Medixs)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content container">
+        <div class="hero">
+            <span class="badge">窓口業務</span>
+            <h2 class="page-title">stera terminalを使ったお会計手順</h2>
+            <p class="page-description">窓口でのキャッシュレス決済端末（stera terminal）を使用した、基本的な会計処理の流れを解説します。</p>
+        </div>
+
+        <div class="steps-container">
+            <article class="step-card">
+                <div class="step-content">
+                    <h3 class="step-title" style="display: flex; align-items: center; gap: 8px;">
+                        <span style="color: var(--primary-color);">💳</span> お会計の基本フロー
+                    </h3>
+                    
+                    <div class="flow-container">
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/receipt-barcode.jpg" id="img-receipt" alt="領収書のバーコード">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge">1</span>領収書のバーコード確認</h4>
+                                <p>領収書右上のバーコード（non-plu）で金額を読み取ります。</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/scan.jpg" id="img-scan" alt="バーコードの読み取り">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge">2</span>バーコードの読み取り</h4>
+                                <p>stera terminalに接続されているバーコードリーダーで、バーコードをスキャンします。</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/checkout.jpg" id="img-checkout" alt="お会計ボタン">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge">3</span>金額の確認と「お会計」ボタン</h4>
+                                <p>stera terminalの画面に読み取った医薬品と金額が表示されます。右下の<strong>オレンジ色の「お会計」ボタン</strong>をタッチします。</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/payment-select.jpg" id="img-payment" alt="支払い方法の選択">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge">4</span>支払い方法の確認と選択</h4>
+                                <p>患者様にご希望の支払い方法をお伺いし、該当するボタン（クレジットカード、現金、電子マネー、QRなど）をタッチします。</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge">5</span>QRコード決済の読み取り（QR選択時）</h4>
+                                <div class="alert-box info" style="padding: 12px; margin-top: 8px; margin-bottom: 0;">
+                                    <div class="alert-content">
+                                        <strong>💡 ワンポイント</strong>
+                                        <p style="font-size: 0.85rem; line-height: 1.6;">QR決済の場合、ハンドスキャナーではなく<strong>本体カメラ</strong>を使います。<br>患者さんにコードを出してもらい、ステラターミナルのフロントモニター上部のカメラにかざしてもらいます。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 薬局スタッフマニュアル</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

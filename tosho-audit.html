@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>散薬・シロップ剤の監査 (TOSHO) | 調剤薬局スタッフ用</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">💊 Staff Manual</h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">会計処理</a></li>
+                    <li><a href="picking-audit.html">ピッキング・監査</a></li>
+                    <li><a href="tosho-audit.html" class="active">散薬・シロップ監査</a></li>
+                    <li><a href="yuyama-pack.html">湯山分包機</a></li>
+                    <li><a href="medixs.html">薬歴 (Medixs)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content container">
+        <div class="hero">
+            <span class="badge" style="background: linear-gradient(135deg, #f59e0b, #d97706); box-shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.39);">監査機器</span>
+            <h2 class="page-title">散薬・シロップ剤の監査 (TOSHO)</h2>
+            <p class="page-description">TOSHOの監査システムを用いた、散薬およびシロップ剤の秤量監査の基本的な手順を説明します。</p>
+        </div>
+
+        <div class="steps-container">
+            <article class="step-card">
+                <div class="step-content">
+                    <h3 class="step-title">TOSHO監査システムでの秤量手順</h3>
+                    <p class="step-text">
+                        安全かつ正確な調剤を行うため、システム画面の指示に従って計量を行ってください。
+                    </p>
+                    
+                    <div class="flow-container">
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/tosho-1.jpg" id="img-tosho-1" alt="監査台のレイアウト">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge" style="background-color: #f59e0b;">1</span>監査台周辺のレイアウト確認</h4>
+                                <p>作業を始める前に、モニター、バーコードリーダー、電子天秤など、<strong>監査台周辺の機器のレイアウトを確認</strong>します。</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow" style="color: #fef3c7; -webkit-text-stroke: 1px #f59e0b;">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/tosho-2.jpg" id="img-tosho-2" alt="患者選択画面">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge" style="background-color: #f59e0b;">2</span>患者の選択</h4>
+                                <p>監査システムの画面から、調剤を行う対象の<strong>患者様を選択</strong>します。氏名や処方内容に間違いがないか確認してください。</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow" style="color: #fef3c7; -webkit-text-stroke: 1px #f59e0b;">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/tosho-3.jpg" id="img-tosho-3" alt="秤量画面と計量">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge" style="background-color: #f59e0b;">3</span>医薬品の読み取りと計量</h4>
+                                <p>バーコードリーダーで<strong>該当する医薬品のコードを読み取り</strong>ます。<br>その後、秤量画面（天秤）に表示される指示量に合わせて計量</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 薬局スタッフマニュアル</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

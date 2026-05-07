@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>マニュアル設定 | 調剤薬局スタッフ用</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .settings-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 24px;
+        }
+        .form-group {
+            margin-bottom: 24px;
+        }
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+        .file-input {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            border: 1px dashed var(--border-color);
+            border-radius: var(--radius-md);
+            background: var(--bg-body);
+            cursor: pointer;
+        }
+        .preview-img {
+            max-width: 100%;
+            height: auto;
+            max-height: 200px;
+            margin-top: 12px;
+            border-radius: var(--radius-md);
+            display: none;
+            border: 1px solid var(--border-color);
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+        .btn-danger {
+            background-color: #ef4444;
+            color: white;
+            margin-left: 12px;
+        }
+        .btn-danger:hover {
+            background-color: #dc2626;
+        }
+        .actions {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+        }
+        #save-message {
+            margin-left: 16px;
+            color: #10b981;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">💊 Staff Manual</h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">会計処理</a></li>
+                    <li><a href="picking-audit.html">ピッキング・監査</a></li>
+                    <li><a href="tosho-audit.html">散薬・シロップ監査</a></li>
+                    <li><a href="yuyama-pack.html">湯山分包機</a></li>
+                    <li><a href="medixs.html">薬歴 (Medixs)</a></li>
+                    <li><a href="settings.html" class="active" style="font-size: 0.85rem;">⚙️ 設定</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content container">
+        <div class="hero" style="padding: 40px 0 32px;">
+            <h2 class="page-title">マニュアル画像設定</h2>
+            <p class="page-description">
+                この端末で表示されるマニュアルの画像を差し替えることができます。<br>
+                ※変更はこの端末のブラウザ（LocalStorage）にのみ保存されます。
+            </p>
+        </div>
+
+        <div class="settings-card">
+            <h3 style="margin-bottom: 16px; border-bottom: 2px solid var(--primary-light); padding-bottom: 8px;">会計処理ページ</h3>
+            <div class="form-group">
+                <label class="form-label">1. 領収書の画像 (NON-PLUコード)</label>
+                <input type="file" id="input-receipt" class="file-input" accept="image/*">
+                <img id="preview-receipt" class="preview-img" alt="プレビュー">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">2. バーコードリーダーでのスキャン画像</label>
+                <input type="file" id="input-scan" class="file-input" accept="image/*">
+                <img id="preview-scan" class="preview-img" alt="プレビュー">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">3. 「お会計」ボタンを押す画面 (stera terminal)</label>
+                <input type="file" id="input-checkout" class="file-input" accept="image/*">
+                <img id="preview-checkout" class="preview-img" alt="プレビュー">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">4. 支払い方法の確認と選択画面 (stera terminal)</label>
+                <input type="file" id="input-payment" class="file-input" accept="image/*">
+                <img id="preview-payment" class="preview-img" alt="プレビュー">
+            </div>
+        </div>
+
+        <div class="settings-card">
+            <h3 style="margin-bottom: 16px; border-bottom: 2px solid var(--primary-light); padding-bottom: 8px;">ピッキング手順 (Picking Go)</h3>
+            <div class="form-group">
+                <label class="form-label">4-1. 画像1枚目 (患者選択)</label>
+                <input type="file" id="input-picking-1" class="file-input" accept="image/*">
+                <img id="preview-picking-1" class="preview-img" alt="プレビュー">
+            </div>
+            <div class="form-group">
+                <label class="form-label">4-2. 画像2枚目 (棚番の確認とピッキング)</label>
+                <input type="file" id="input-picking-2" class="file-input" accept="image/*">
+                <img id="preview-picking-2" class="preview-img" alt="プレビュー">
+            </div>
+            <div class="form-group">
+                <label class="form-label">4-3. 画像3枚目 (スキャンしてチェック)</label>
+                <input type="file" id="input-picking-3" class="file-input" accept="image/*">
+                <img id="preview-picking-3" class="preview-img" alt="プレビュー">
+            </div>
+        </div>
+
+        <div class="settings-card">
+            <h3 style="margin-bottom: 16px; border-bottom: 2px solid var(--primary-light); padding-bottom: 8px;">監査手順 (medimonitor)</h3>
+            <div class="form-group">
+                <label class="form-label">5-1. 画像1枚目 (監査台に置く)</label>
+                <input type="file" id="input-audit-1" class="file-input" accept="image/*">
+                <img id="preview-audit-1" class="preview-img" alt="プレビュー">
+            </div>
+            <div class="form-group">
+                <label class="form-label">5-2. 画像2枚目 (重量の一致を確認)</label>
+                <input type="file" id="input-audit-2" class="file-input" accept="image/*">
+                <img id="preview-audit-2" class="preview-img" alt="プレビュー">
+            </div>
+            <div class="form-group">
+                <label class="form-label">5-3. 画像3枚目 (監査完了処理)</label>
+                <input type="file" id="input-audit-3" class="file-input" accept="image/*">
+                <img id="preview-audit-3" class="preview-img" alt="プレビュー">
+            </div>
+        </div>
+
+        <div class="settings-card">
+            <h3 style="margin-bottom: 16px; border-bottom: 2px solid var(--primary-light); padding-bottom: 8px;">散薬・シロップ剤の監査 (TOSHO)</h3>
+            <div class="form-group">
+                <label class="form-label">5.5-1. 画像1枚目 (監査台のレイアウト)</label>
+                <input type="file" id="input-tosho-1" class="file-input" accept="image/*">
+                <img id="preview-tosho-1" class="preview-img" alt="プレビュー">
+            </div>
+            <div class="form-group">
+                <label class="form-label">5.5-2. 画像2枚目 (患者選択画面)</label>
+                <input type="file" id="input-tosho-2" class="file-input" accept="image/*">
+                <img id="preview-tosho-2" class="preview-img" alt="プレビュー">
+            </div>
+            <div class="form-group">
+                <label class="form-label">5.5-3. 画像3枚目 (秤量画面)</label>
+                <input type="file" id="input-tosho-3" class="file-input" accept="image/*">
+                <img id="preview-tosho-3" class="preview-img" alt="プレビュー">
+            </div>
+        </div>
+
+        <div class="settings-card">
+            <h3 style="margin-bottom: 16px; border-bottom: 2px solid var(--primary-light); padding-bottom: 8px;">湯山 分包機の使用方法</h3>
+            <div class="form-group">
+                <label class="form-label">5.8-1. 画像1枚目 (処方データの呼び出し)</label>
+                <input type="file" id="input-yuyama-1" class="file-input" accept="image/*">
+                <img id="preview-yuyama-1" class="preview-img" alt="プレビュー">
+            </div>
+            <div class="form-group">
+                <label class="form-label">5.8-2. 画像2枚目 (薬剤のセットと確認)</label>
+                <input type="file" id="input-yuyama-2" class="file-input" accept="image/*">
+                <img id="preview-yuyama-2" class="preview-img" alt="プレビュー">
+            </div>
+            <div class="form-group">
+                <label class="form-label">5.8-3. 画像3枚目 (分包開始と仕上がり)</label>
+                <input type="file" id="input-yuyama-3" class="file-input" accept="image/*">
+                <img id="preview-yuyama-3" class="preview-img" alt="プレビュー">
+            </div>
+        </div>
+
+        <div class="settings-card">
+            <h3 style="margin-bottom: 16px; border-bottom: 2px solid var(--primary-light); padding-bottom: 8px;">薬歴業務 (Medixs)</h3>
+            <div class="form-group">
+                <label class="form-label">6-1. 画像1枚目 (「問診」ボタン)</label>
+                <input type="file" id="input-medixs-1" class="file-input" accept="image/*">
+                <img id="preview-medixs-1" class="preview-img" alt="プレビュー">
+            </div>
+            <div class="form-group">
+                <label class="form-label">6-2. 画像2枚目 (患者選択と確認画面)</label>
+                <input type="file" id="input-medixs-2" class="file-input" accept="image/*">
+                <img id="preview-medixs-2" class="preview-img" alt="プレビュー">
+            </div>
+        </div>
+
+        <div class="settings-card" style="background: transparent; box-shadow: none; padding: 0; display: flex; align-items: center;">
+            <button id="btn-save" class="btn btn-primary" style="margin-right: 12px;">保存して全ページに反映</button>
+            <button id="btn-export" class="btn btn-primary" style="background-color: #0ea5e9; border-color: #0284c7; margin-right: 12px;">📥 画像を一括ダウンロード</button>
+            <button id="btn-reset" class="btn btn-danger">デフォルトに戻す</button>
+            <span id="save-message">✔ 保存しました！</span>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 薬局スタッフマニュアル</p>
+        </div>
+    </footer>
+    <script src="js/settings.js"></script>
+</body>
+</html>

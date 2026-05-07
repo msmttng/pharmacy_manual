@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>湯山 分包機使用方法 | 調剤薬局スタッフ用</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">💊 Staff Manual</h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">会計処理</a></li>
+                    <li><a href="picking-audit.html">ピッキング・監査</a></li>
+                    <li><a href="tosho-audit.html">散薬・シロップ監査</a></li>
+                    <li><a href="yuyama-pack.html" class="active">湯山分包機</a></li>
+                    <li><a href="medixs.html">薬歴 (Medixs)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content container">
+        <div class="hero">
+            <span class="badge" style="background: linear-gradient(135deg, #14b8a6, #0f766e); box-shadow: 0 4px 14px 0 rgba(20, 184, 166, 0.39);">調剤機器</span>
+            <h2 class="page-title">湯山 分包機の使用方法</h2>
+            <p class="page-description">湯山（Yuyama）の自動分包機を使用した、一包化や散薬分包の基本的な操作手順を説明します。</p>
+        </div>
+
+        <div class="steps-container">
+            <article class="step-card">
+                <div class="step-content">
+                    <h3 class="step-title">分包機の基本操作フロー</h3>
+                    <p class="step-text">
+                        処方データに基づき、正確に薬剤をセットして分包を開始します。
+                    </p>
+                    
+                    <div class="alert-box info" style="background-color: #f0fdfa; border-left-color: #0d9488; margin-bottom: 24px;">
+                        <span class="alert-icon">💡</span>
+                        <div class="alert-content">
+                            <strong style="color: #0f766e;">印字について</strong>
+                            <p style="color: #115e59;">分包紙への通常印字なしで運用しています。希望があれば印字してください。</p>
+                        </div>
+                    </div>
+
+                    <div class="flow-container">
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/yuyama-1.jpg" id="img-yuyama-1" alt="処方データの呼び出し">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge" style="background-color: #0f766e;">1</span>処方データの呼び出し</h4>
+                                <p>分包機の操作パネル（PC）から、対象となる患者様の<strong>処方データを受信・選択</strong>します。印字内容や分包数（日数や回数）が処方箋と一致しているか確認します。</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow" style="color: #ccfbf1; -webkit-text-stroke: 1px #0f766e;">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/yuyama-2.jpg" id="img-yuyama-2" alt="薬剤のセット">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge" style="background-color: #0f766e;">2</span>薬剤のセットとカセット確認</h4>
+                                <p>手撒き（DIT）が必要な錠剤や散薬がある場合は、指示通りに<strong>マスへ正確にセット</strong>します。自動カセットの薬品については、欠品エラーが出ていないか確認します。</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow" style="color: #ccfbf1; -webkit-text-stroke: 1px #0f766e;">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/yuyama-3.jpg" id="img-yuyama-3" alt="分包開始">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge" style="background-color: #0f766e;">3</span>分包の開始と仕上がり確認</h4>
+                                <p>準備が整ったら<strong>「開始」ボタン</strong>を押して分包をスタートします。分包完了後は、空包がないか、印字がかすれていないかを確認してから監査に回します。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 薬局スタッフマニュアル</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
