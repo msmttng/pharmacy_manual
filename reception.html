@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>処方受付からの流れ | 調剤薬局スタッフ用</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">💊 Staff Manual</h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="reception.html" class="active">受付フロー</a></li>
+                    <li><a href="picking-audit.html">ピッキング・監査</a></li>
+                    <li><a href="tosho-audit.html">散薬・シロップ監査</a></li>
+                    <li><a href="yuyama-pack.html">湯山分包機</a></li>
+                    <li><a href="index.html">会計処理</a></li>
+                    <li><a href="medixs.html">薬歴 (Medixs)</a></li>
+                    <li><a href="others.html">その他・配置場所</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content container">
+        <div class="hero">
+            <span class="badge">窓口・受付業務</span>
+            <h2 class="page-title">処方受付からの流れ</h2>
+            <p class="page-description">患者様が来局されてから、処方箋を受け付けて情報を登録するまでの基本的なフローを解説します。</p>
+        </div>
+
+        <div class="steps-container">
+            <article class="step-card">
+                <div class="step-content">
+                    <h3 class="step-title" style="display: flex; align-items: center; gap: 8px;">
+                        <span style="color: var(--primary-color);">📝</span> 既存の患者様（再来）の受付
+                    </h3>
+                    
+                    <div class="flow-container">
+                        <div class="flow-item">
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge">1</span>処方箋の受け取りと確認</h4>
+                                <p>患者様から処方箋をお預かりし、以下の3点を確認・ご提示いただきます。</p>
+                                <ul style="margin-top: 8px; padding-left: 24px; color: var(--text-muted);">
+                                    <li>処方せん</li>
+                                    <li>マイナンバーカード（健康保険証、資格確認証）</li>
+                                    <li>お薬手帳</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge">2</span>マイナンバーカードの登録</h4>
+                                <p>顔認証付きカードリーダーでマイナンバーカードの読み取り・受付を行っていただきます。（健康保険証、資格確認証の場合は事務にそのまま渡します）</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge">3</span>事務への引き継ぎ</h4>
+                                <p>お預かりした<strong>お薬手帳</strong>や<strong>健康保険証、資格確認証</strong>がある場合は、カウンター左右にあるファイルに入れて事務スタッフに渡してください。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="step-card">
+                <div class="step-content">
+                    <h3 class="step-title" style="display: flex; align-items: center; gap: 8px;">
+                        <span style="color: var(--primary-color);">🆕</span> 新規の患者様（新患）の受付
+                    </h3>
+                    
+                    <div class="flow-container">
+                        <div class="flow-item">
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge">1</span>GE（ジェネリック）希望の確認</h4>
+                                <p>初めて来局された方には、まずジェネリック医薬品への変更を希望されるか確認します。</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge">2</span>マイナンバーカードの登録</h4>
+                                <p>再来の患者様と同様に、顔認証付きカードリーダーでマイナンバーカードの登録をご案内します。</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge">3</span>初回問診票の入力案内</h4>
+                                <div class="alert-box info" style="margin-top: 8px; margin-bottom: 0;">
+                                    <div class="alert-content">
+                                        <strong>💡 WEB問診を基本としています</strong>
+                                        <p>
+                                            基本的には、患者様ご自身のスマホで<strong>「QRコード読み取り」または「タッチ（NFC）」</strong>にてWEB問診票へアクセスし、入力していただきます。<br>
+                                            ※スマホをお持ちでない方や、ご高齢でスマホ入力が難しい方など、手書きをご希望の場合はクリップボードに挟んだ紙の問診票をお渡ししてください。
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 薬局スタッフマニュアル</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

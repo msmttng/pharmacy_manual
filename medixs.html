@@ -15,11 +15,13 @@
             <h1 class="logo">💊 Staff Manual</h1>
             <nav class="nav">
                 <ul>
-                    <li><a href="index.html">会計処理</a></li>
+                    <li><a href="reception.html">受付フロー</a></li>
                     <li><a href="picking-audit.html">ピッキング・監査</a></li>
                     <li><a href="tosho-audit.html">散薬・シロップ監査</a></li>
                     <li><a href="yuyama-pack.html">湯山分包機</a></li>
+                    <li><a href="index.html">会計処理</a></li>
                     <li><a href="medixs.html" class="active">薬歴 (Medixs)</a></li>
+                    <li><a href="others.html">その他・配置場所</a></li>
                 </ul>
             </nav>
         </div>
@@ -48,9 +50,109 @@
         </div>
 
         <div class="steps-container">
-            <!-- Step 1: 薬歴業務フロー -->
+            <!-- Step 0: 単発・派遣薬剤師さんへのお願い -->
+            <article class="step-card" style="border: 1px solid #93c5fd; box-shadow: 0 4px 14px 0 rgba(37, 99, 235, 0.1);">
+                <div class="step-content">
+                    <h3 class="step-title" style="display: flex; align-items: center; gap: 8px;">
+                        <span style="color: var(--primary-color);">🤝</span> 派遣・単発でお越しの方へ
+                    </h3>
+                    <div class="alert-box info" style="margin-top: 16px; margin-bottom: 0;">
+                        <div class="alert-content">
+                            <strong>📝 薬歴の記載について（頑張らなくてOKです）</strong>
+                            <p>当日は外来を回すのが最優先となりますので、薬歴に時間をかける必要はありません。<br>
+                            SOAP形式で要点（Do内容、特記事項、次回確認事項など）のみを簡潔に記載してください。<br>
+                            MEDIXSの操作方法でわからないことがあれば、常勤薬剤師に聞いてください。</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Step 1: MEDIXSの基本使用方法 -->
             <article class="step-card">
                 <div class="step-number" style="color: #ede9fe; -webkit-text-stroke: 2px #8b5cf6;">01</div>
+                <div class="step-content">
+                    <h3 class="step-title">MEDIXSの基本使用方法</h3>
+                    <p class="step-text">
+                        Medixsでの基本的な薬歴作成から保存までの操作手順です。
+                    </p>
+                    
+                    <div class="flow-container">
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/スクリーンショット (7).png" alt="患者一覧・受付リスト">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge" style="background-color: #8b5cf6;">1</span>患者一覧・受付リストの確認</h4>
+                                <p>画面左側の受付リストから、薬歴を作成する患者様を選択します。</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow" style="color: #ede9fe; -webkit-text-stroke: 1px #8b5cf6;">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/スクリーンショット (8).png" alt="処方内容の確認">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge" style="background-color: #8b5cf6;">2</span>処方内容の確認</h4>
+                                <p>処方内容や過去の薬歴、アレルギー、併用薬などの基本情報を確認します。</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow" style="color: #ede9fe; -webkit-text-stroke: 1px #8b5cf6;">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/スクリーンショット (9).png" alt="指導画面への移行">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge" style="background-color: #8b5cf6;">3</span>薬歴（指導）入力画面へ</h4>
+                                <p>画面の指示に従い、薬歴の入力画面（指導作成画面）へと進みます。</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow" style="color: #ede9fe; -webkit-text-stroke: 1px #8b5cf6;">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/スクリーンショット (10).png" alt="SOAP入力">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge" style="background-color: #8b5cf6;">4</span>SOAP・指導内容の入力</h4>
+                                <p>S（自覚症状）、O（他覚所見）、A（評価）、P（計画）の形式に沿って、要点を絞って入力します。前回薬歴も適宜参照してください。</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow" style="color: #ede9fe; -webkit-text-stroke: 1px #8b5cf6;">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/スクリーンショット (11).png" alt="各種チェック・加算等の確認">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge" style="background-color: #8b5cf6;">5</span>加算・指導項目の確認</h4>
+                                <p>算定する加算項目や、指導せんの発行など、必要な付帯情報の確認・選択を行います。</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow" style="color: #ede9fe; -webkit-text-stroke: 1px #8b5cf6;">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/スクリーンショット (12).png" alt="薬歴の完了・保存">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge" style="background-color: #8b5cf6;">6</span>薬歴の保存（完了登録）</h4>
+                                <p>入力が完了したら、保存ボタン（完了登録）を押して薬歴を確定させます。</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow" style="color: #ede9fe; -webkit-text-stroke: 1px #8b5cf6;">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/スクリーンショット (13).png" alt="印刷や次の患者への移行">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge" style="background-color: #8b5cf6;">7</span>次の患者へ</h4>
+                                <p>必要に応じて指導せん等の印刷を行い、次の患者様の対応へ移ります。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Step 2: 薬歴業務フロー -->
+            <article class="step-card">
+                <div class="step-number" style="color: #ede9fe; -webkit-text-stroke: 2px #8b5cf6;">02</div>
                 <div class="step-content">
                     <h3 class="step-title">新患データのMedixsへの一括入力について</h3>
                     <p class="step-text">
@@ -90,6 +192,53 @@
                             <div class="flow-item-content">
                                 <h4><span class="flow-badge" style="background-color: #8b5cf6;">3</span>自動入力の完了</h4>
                                 <p>ボタンを押すと、アレルギー歴や併用薬などの基本情報が<strong>自動でMedixsに入力</strong>され、一括登録が完了となります。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Step 3: オンライン資格確認の併用薬確認 -->
+            <article class="step-card">
+                <div class="step-number" style="color: #ede9fe; -webkit-text-stroke: 2px #8b5cf6;">03</div>
+                <div class="step-content">
+                    <h3 class="step-title">オンライン資格確認からの併用薬の確認</h3>
+                    <div class="alert-box warning" style="margin-bottom: 16px;">
+                        <div class="alert-content">
+                            <strong>⚠️ 併用薬自動登録の注意点</strong>
+                            <p>オンライン資格確認からの併用薬は基本的に自動で併用薬に登録されるようになっていますが、<strong>完全に機能していない場合があるため、必ず手動での確認</strong>をお願いします。</p>
+                        </div>
+                    </div>
+                    <p class="step-text">以下の手順（方法）を参照し、正しく併用薬が反映されているかチェックしてください。</p>
+                    
+                    <div class="flow-container">
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/スクリーンショット (16).png" alt="オンライン資格確認画面の確認">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge" style="background-color: #8b5cf6;">1</span>オンライン資格確認データの表示</h4>
+                                <p>オンライン資格確認システムから取得された薬剤情報（併用薬）の画面を開きます。</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow" style="color: #ede9fe; -webkit-text-stroke: 1px #8b5cf6;">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/スクリーンショット (14).png" alt="未登録の併用薬チェック">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge" style="background-color: #8b5cf6;">2</span>未反映の薬剤がないかチェック</h4>
+                                <p>自動登録のシステムエラーや漏れにより、Medixsの併用薬リストに反映されていない薬がないか目視で確認します。</p>
+                            </div>
+                        </div>
+                        <div class="flow-arrow" style="color: #ede9fe; -webkit-text-stroke: 1px #8b5cf6;">▼</div>
+                        <div class="flow-item">
+                            <div class="flow-item-image">
+                                <img src="images/スクリーンショット (15).png" alt="手動での反映・登録処理">
+                            </div>
+                            <div class="flow-item-content">
+                                <h4><span class="flow-badge" style="background-color: #8b5cf6;">3</span>手動での反映・登録</h4>
+                                <p>登録漏れがあった場合は、画面の操作に従って手動で併用薬として取り込み（登録完了）を行ってください。</p>
                             </div>
                         </div>
                     </div>
