@@ -82,25 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeLightbox();
     });
-    // ---- スマホナビ：スクロール可能インジケーター ----
-    const nav = document.querySelector('.nav');
-    if (nav) {
-        // nav を nav-scroll-wrapper でラップ
-        const wrapper = document.createElement('div');
-        wrapper.className = 'nav-scroll-wrapper';
-        nav.parentNode.insertBefore(wrapper, nav);
-        wrapper.appendChild(nav);
 
-        // スクロール末端に達したら矢印を消す
-        function updateScrollIndicator() {
-            const atEnd = nav.scrollLeft + nav.clientWidth >= nav.scrollWidth - 4;
-            wrapper.classList.toggle('scrolled-end', atEnd);
-        }
-
-        nav.addEventListener('scroll', updateScrollIndicator, { passive: true });
-        // 初期チェック（メニュー項目が少なくてスクロール不要な場合も対応）
-        updateScrollIndicator();
-    }
 
     // ---- 次の項目へボタン ----
     const PAGE_ORDER = [
