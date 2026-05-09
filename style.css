@@ -278,11 +278,12 @@ body {
         gap: 12px;
         align-items: flex-start;
     }
-    
+
     .logo {
         padding: 0 24px;
+        font-size: 1.05rem;
     }
-    
+
     .nav {
         width: 100%;
         overflow-x: auto;
@@ -336,31 +337,80 @@ body {
 
     .nav a {
         white-space: nowrap;
-        font-size: 0.9rem;
-        padding: 6px 12px;
+        font-size: 0.82rem;
+        padding: 5px 10px;
     }
 
+    /* Hero */
     .hero {
-        padding: 40px 0 32px;
-    }
-
-    .step-card {
-        flex-direction: column;
-        gap: 16px;
-        padding: 24px;
-    }
-    
-    .step-number {
-        font-size: 2.5rem;
-        -webkit-text-stroke: 1px var(--primary-color);
+        padding: 28px 0 20px;
     }
 
     .page-title {
-        font-size: 1.75rem;
+        font-size: 1.35rem;
+        letter-spacing: -0.01em;
+    }
+
+    .page-description {
+        font-size: 0.92rem;
+    }
+
+    /* Step cards */
+    .step-card {
+        flex-direction: column;
+        gap: 12px;
+        padding: 18px 16px;
+    }
+
+    .step-number {
+        font-size: 2rem;
+        -webkit-text-stroke: 1px var(--primary-color);
+    }
+
+    .step-title {
+        font-size: 1.15rem;
+        margin-bottom: 10px;
+    }
+
+    .step-text {
+        font-size: 0.92rem;
+    }
+
+    /* Alert box */
+    .alert-box {
+        padding: 14px;
+        gap: 10px;
+    }
+
+    .alert-icon {
+        font-size: 1.2rem;
+    }
+
+    .alert-content strong {
+        font-size: 0.92rem;
+    }
+
+    .alert-content p {
+        font-size: 0.88rem;
+    }
+
+    /* Flow items */
+    .flow-item-content h4 {
+        font-size: 0.95rem;
+    }
+
+    .flow-item-content p {
+        font-size: 0.88rem;
     }
 
     .image-gallery.single-image {
         grid-template-columns: 1fr;
+    }
+
+    /* Next page button */
+    .next-page-btn {
+        font-size: 0.92rem;
+        padding: 13px 24px;
     }
 }
 
