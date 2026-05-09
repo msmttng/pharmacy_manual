@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+﻿document.addEventListener('DOMContentLoaded', () => {
     // ---- localStorage から保存済み画像を読み込む（既存機能） ----
     const imageMap = {
         'img-receipt':        'manual_img_receipt',
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { href: 'reception.html',     label: '受付フロー' },
         { href: 'picking-audit.html', label: 'ピッキング・監査' },
         { href: 'tosho-audit.html',   label: '散薬・シロップ監査' },
-        { href: 'yuyama-pack.html',   label: '湯山分包機' },
+        { href: 'yuyama-pack.html',   label: 'ユヤマ分包機' },
         { href: 'index.html',         label: '会計処理' },
         { href: 'medixs.html',        label: '薬歴 (Medixs)' },
         { href: 'others.html',        label: 'その他・配置場所' },
