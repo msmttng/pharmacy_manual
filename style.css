@@ -271,6 +271,10 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
     /* Header & Nav adjustments for mobile */
+    .header {
+        position: relative;
+    }
+
     .header .container {
         flex-direction: column;
         height: auto;
