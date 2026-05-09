@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 画像ID と localStorage キーの対応マップ
+    // ---- localStorage から保存済み画像を読み込む（既存機能） ----
     const imageMap = {
         'img-receipt':        'manual_img_receipt',
         'img-scan':           'manual_img_scan',
@@ -28,74 +28,51 @@ document.addEventListener('DOMContentLoaded', () => {
         'img-medixs-step-7':  'manual_img_medixs_step_7',
     };
 
-    // 非表示のファイル入力を1つ用意して使い回す
-    const fileInput = document.createElement('input');
-    fileInput.type = 'file';
-    fileInput.accept = 'image/*';
-    fileInput.style.display = 'none';
-    document.body.appendChild(fileInput);
-
-    let currentImgId = null;
-
-    // ファイルが選択されたら読み込んで反映・保存
-    fileInput.addEventListener('change', () => {
-        const file = fileInput.files[0];
-        if (!file || !currentImgId) return;
-
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            const dataUrl = e.target.result;
-            const imgEl = document.getElementById(currentImgId);
-            if (imgEl) {
-                imgEl.src = dataUrl;
-                // ホバーラベルをリセット
-                showUploadedBadge(imgEl);
-            }
-            const key = imageMap[currentImgId];
-            if (key) localStorage.setItem(key, dataUrl);
-        };
-        reader.readAsDataURL(file);
-        // 同じファイルを再選択できるようリセット
-        fileInput.value = '';
-    });
-
-    // 各画像を初期化（localStorage読込 ＋ クリックで更新）
     for (const [id, key] of Object.entries(imageMap)) {
-        const imgEl = document.getElementById(id);
-        if (!imgEl) continue;
-
-        // localStorageから読み込んで差し替え
         const stored = localStorage.getItem(key);
         if (stored) {
-            imgEl.src = stored;
-            showUploadedBadge(imgEl);
+            const imgEl = document.getElementById(id);
+            if (imgEl) imgEl.src = stored;
         }
-
-        // ラッパーをクリッカブルにする
-        makeClickable(imgEl, id);
     }
 
-    // 画像をクリッカブルにする
-    function makeClickable(imgEl, id) {
-        const wrapper = imgEl.closest('.flow-item-image, .image-wrapper') || imgEl.parentElement;
-        wrapper.classList.add('img-uploadable');
-        wrapper.title = '📷 クリックして画像を変更';
-        wrapper.style.cursor = 'pointer';
+    // ---- ライトボックス（クリックで拡大） ----
 
-        wrapper.addEventListener('click', () => {
-            currentImgId = id;
-            fileInput.click();
+    // オーバーレイ要素を生成
+    const overlay = document.createElement('div');
+    overlay.id = 'lightbox-overlay';
+    overlay.innerHTML = `
+        <button id="lightbox-close" aria-label="閉じる">✕</button>
+        <img id="lightbox-img" src="" alt="">
+    `;
+    document.body.appendChild(overlay);
+
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    // ページ内のすべての flow-item-image 内の img にクリックを設定
+    document.querySelectorAll('.flow-item-image img, .image-wrapper img').forEach(img => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
         });
+    });
+
+    // オーバーレイ or 閉じるボタンでライトボックスを閉じる
+    function closeLightbox() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
     }
 
-    // アップロード済みバッジを表示
-    function showUploadedBadge(imgEl) {
-        const wrapper = imgEl.closest('.flow-item-image, .image-wrapper') || imgEl.parentElement;
-        if (!wrapper.querySelector('.uploaded-badge')) {
-            const badge = document.createElement('span');
-            badge.className = 'uploaded-badge';
-            badge.textContent = '✔ カスタム画像';
-            wrapper.appendChild(badge);
-        }
-    }
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) closeLightbox();
+    });
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+
+    // Escape キーでも閉じる
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+    });
 });
