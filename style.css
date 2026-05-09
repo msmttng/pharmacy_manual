@@ -288,8 +288,9 @@ body {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         padding-bottom: 12px;
+        position: relative;
     }
-    
+
     /* Hide scrollbar for nav */
     .nav::-webkit-scrollbar {
         display: none;
@@ -298,12 +299,41 @@ body {
         -ms-overflow-style: none;
         scrollbar-width: none;
     }
-    
+
+    /* 右端フェード＋矢印（スクロール可能を示す） */
+    .nav-scroll-wrapper {
+        position: relative;
+        width: 100%;
+    }
+
+    .nav-scroll-wrapper::after {
+        content: '›';
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: calc(100% - 12px);
+        width: 52px;
+        background: linear-gradient(to right, transparent, var(--bg-card) 70%);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding-right: 10px;
+        font-size: 1.4rem;
+        color: var(--primary-color);
+        pointer-events: none;
+        transition: opacity 0.3s;
+        opacity: 1;
+    }
+
+    .nav-scroll-wrapper.scrolled-end::after {
+        opacity: 0;
+    }
+
     .nav ul {
         padding: 0 24px;
         gap: 8px;
     }
-    
+
     .nav a {
         white-space: nowrap;
         font-size: 0.9rem;
