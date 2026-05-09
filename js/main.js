@@ -94,4 +94,36 @@ document.addEventListener('DOMContentLoaded', () => {
         // 初期チェック（メニュー項目が少なくてスクロール不要な場合も対応）
         updateScrollIndicator();
     }
+
+    // ---- 次の項目へボタン ----
+    const PAGE_ORDER = [
+        { href: 'reception.html',     label: '受付フロー' },
+        { href: 'picking-audit.html', label: 'ピッキング・監査' },
+        { href: 'tosho-audit.html',   label: '散薬・シロップ監査' },
+        { href: 'yuyama-pack.html',   label: '湯山分包機' },
+        { href: 'index.html',         label: '会計処理' },
+        { href: 'medixs.html',        label: '薬歴 (Medixs)' },
+        { href: 'others.html',        label: 'その他・配置場所' },
+    ];
+
+    const currentFile = location.pathname.split('/').pop() || 'index.html';
+    const currentIdx  = PAGE_ORDER.findIndex(p => p.href === currentFile);
+    const nextPage    = (currentIdx >= 0 && currentIdx < PAGE_ORDER.length - 1)
+        ? PAGE_ORDER[currentIdx + 1]
+        : null;
+
+    if (nextPage) {
+        const footer = document.querySelector('.footer');
+        if (footer) {
+            const navDiv = document.createElement('div');
+            navDiv.className = 'next-page-nav';
+            navDiv.innerHTML = `
+                <a href="${nextPage.href}" class="next-page-btn">
+                    次の項目へ：${nextPage.label} <span class="next-arrow">→</span>
+                </a>
+            `;
+            footer.parentNode.insertBefore(navDiv, footer);
+        }
+    }
 });
+
