@@ -517,3 +517,48 @@ body {
     font-weight: 800;
     font-size: 1.1rem;
 }
+
+/* ---- 画像クリックアップロード ---- */
+.img-uploadable {
+    position: relative;
+    overflow: hidden;
+}
+
+/* ホバー時のオーバーレイヒント */
+.img-uploadable::after {
+    content: '📷 クリックして画像を変更';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    border-radius: inherit;
+    pointer-events: none;
+}
+
+.img-uploadable:hover::after {
+    opacity: 1;
+}
+
+/* アップロード済みバッジ */
+.uploaded-badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background: #10b981;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 99px;
+    pointer-events: none;
+    z-index: 10;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
